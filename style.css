@@ -208,4 +208,8 @@ h3 {
   top: 1rem;
 }
 
-/* Qui aggiungeremo la media query durante la demo. */
+@media (max-width: 599px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+}
