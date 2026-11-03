@@ -3,8 +3,8 @@
 
 /* Scelte comuni: ogni regola usa var() per richiamarne il valore. */
 :root {
-  --colore-primario: #925de7;
-  --colore-primario-scuro: #462386;
+  --colore-primario: #773ada;
+  --colore-primario-scuro: #2c125b;
   --colore-sfondo: #f5f2e9;
   --colore-testo: #202923;
   --font-testo: Arial, Helvetica, sans-serif;
