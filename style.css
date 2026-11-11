@@ -1,10 +1,8 @@
-/* Stile iniziale: tipografia, colori e variabili CSS sono già predisposti.
-   Lavoreremo su collegamenti, CSS condiviso e disposizione delle schede. */
+/* Segnale: stile condiviso per tutte le pagine. */
 
-/* Scelte comuni: ogni regola usa var() per richiamarne il valore. */
 :root {
-  --colore-primario: #773ada;
-  --colore-primario-scuro: #2c125b;
+  --colore-primario: #8039b6;
+  --colore-primario-scuro: #781599;
   --colore-sfondo: #f5f2e9;
   --colore-testo: #202923;
   --font-testo: Arial, Helvetica, sans-serif;
@@ -29,12 +27,12 @@ a {
 }
 
 a:hover {
-  text-decoration-thickness: 3px;
+  text-decoration: underline;
 }
 
 a:focus-visible {
   outline: 3px solid var(--colore-testo);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
 .container {
@@ -65,17 +63,15 @@ a:focus-visible {
 }
 
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
   margin-top: 1rem;
 }
 
 nav a {
   display: inline-block;
-  margin-right: 1rem;
   padding: 0.25rem 0;
-}
-
-nav a[aria-current="page"] {
-  font-weight: bold;
 }
 
 .intro {
@@ -133,6 +129,7 @@ h3 {
 
 .button-link:hover {
   background: var(--colore-primario-scuro);
+  text-decoration: none;
 }
 
 .content-section {
@@ -156,14 +153,14 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+/* Griglia degli appuntamenti. */
 .event-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
 .event-card {
-  min-width: 0;
   overflow: hidden;
   border: 1px solid #b7c0b7;
   border-radius: 0.75rem;
@@ -175,29 +172,93 @@ h3 {
   width: 100%;
   height: auto;
 }
-@media (min-width: 600px) {
-  .event-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .event-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 
 .event-body {
-  padding: 1.25rem;
-}
-
-.event-body p:last-child {
-  margin-bottom: 0;
+  padding: 1.5rem;
 }
 
 .event-place {
+  margin-bottom: 0;
   color: #46564b;
   font-size: 0.875rem;
+}
+
+/* Galleria fotografica delle sedi in info.html. */
+.luoghi-swiper {
+  width: 100%;
+  max-width: 54rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.luoghi-swiper .swiper-slide {
+  margin: 0;
+  background: #ffffff;
+}
+
+.luoghi-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.luoghi-swiper figcaption {
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.luoghi-swiper figcaption strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.gallery-controls .swiper-button-prev,
+.gallery-controls .swiper-button-next {
+  position: static;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  margin: 0;
+  border: 2px solid var(--colore-primario);
+  border-radius: 50%;
+  color: var(--colore-primario);
+}
+
+.gallery-controls .swiper-button-prev::after,
+.gallery-controls .swiper-button-next::after {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.gallery-controls .swiper-pagination {
+  position: static;
+  width: auto;
+  color: var(--colore-testo);
+}
+
+/* Mappa e indirizzi in info.html. */
+#mappa-sedi {
+  display: block;
+  width: 100%;
+  height: 28rem;
+  border: 0;
+}
+
+.venue-addresses {
+  padding-left: 1.25rem;
+}
+
+.venue-addresses li {
+  margin-bottom: 0.75rem;
 }
 
 .site-footer {
@@ -211,6 +272,7 @@ h3 {
   position: absolute;
   top: -6rem;
   left: 1rem;
+  z-index: 10;
   padding: 0.75rem 1rem;
   background: #ffffff;
   color: var(--colore-testo);
@@ -220,4 +282,38 @@ h3 {
   top: 1rem;
 }
 
+.gallery-controls button:focus-visible,
+.venue-addresses a:focus-visible,
+.site-header nav a:focus-visible {
+  outline: 3px solid var(--colore-testo);
+  outline-offset: 3px;
+}
 
+/* Da 600 px: due colonne per gli appuntamenti. */
+@media (min-width: 600px) {
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Da 1024 px: tre colonne per gli appuntamenti. */
+@media (min-width: 1024px) {
+  .event-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Adattamenti per schermi piccoli. */
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #mappa-sedi {
+    height: 22rem;
+  }
+
+  .gallery-controls {
+    gap: 0.75rem;
+  }
+}
