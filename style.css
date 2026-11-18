@@ -1,16 +1,22 @@
 /* Segnale: stile condiviso per tutte le pagine. */
 
 :root {
-  --colore-primario: #8039b6;
-  --colore-primario-scuro: #781599;
-  --colore-sfondo: #f5f2e9;
-  --colore-testo: #202923;
-  --font-testo: Arial, Helvetica, sans-serif;
-  --font-titoli: Georgia, "Times New Roman", serif;
+  --colore-primario: #4ab5d5;
+  --colore-primario-scuro: #075a73;
+  --colore-sfondo: #f0e4c2;
+  --colore-testo: #172a33;
+  --colore-secondario: #3d5963;
+  --colore-bordo: #b7d1da;
+  --font-testo: "Satoshi", Arial, Helvetica, sans-serif;
+  --font-titoli: "Satoshi", Arial, Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 10rem;
 }
 
 body {
@@ -23,7 +29,7 @@ body {
 }
 
 a {
-  color: var(--colore-primario);
+  color: var(--colore-primario-scuro);
 }
 
 a:hover {
@@ -41,16 +47,21 @@ a:focus-visible {
   margin: 0 auto;
 }
 
+/* Intestazione sticky e navigazione responsive. */
 .site-header {
-  padding: 1.25rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 0;
   border-bottom: 4px solid var(--colore-primario);
+  background: var(--colore-sfondo);
 }
 
 .brand {
   display: inline-block;
   color: var(--colore-testo);
   font-size: 1.75rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
 }
@@ -59,30 +70,38 @@ a:focus-visible {
   display: block;
   margin-top: 0.25rem;
   font-size: 0.875rem;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin-top: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 nav a {
   display: inline-block;
-  padding: 0.25rem 0;
+  padding: 0.2rem 0;
+}
+
+nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25rem;
 }
 
 .intro {
-  padding: 3rem 0 1rem;
+  padding: 2rem 0 1rem;
 }
 
 .eyebrow,
 .event-meta {
-  color: #46564b;
+  color: var(--colore-secondario);
   font-size: 0.875rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 h1,
@@ -123,7 +142,7 @@ h3 {
   border-radius: 0.5rem;
   background: var(--colore-primario);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -162,7 +181,7 @@ h3 {
 
 .event-card {
   overflow: hidden;
-  border: 1px solid #b7c0b7;
+  border: 1px solid var(--colore-bordo);
   border-radius: 0.75rem;
   background: #ffffff;
 }
@@ -179,12 +198,14 @@ h3 {
 
 .event-place {
   margin-bottom: 0;
-  color: #46564b;
+  color: var(--colore-secondario);
   font-size: 0.875rem;
 }
 
 /* Galleria fotografica delle sedi in info.html. */
 .luoghi-swiper {
+  position: relative;
+  z-index: 0;
   width: 100%;
   max-width: 54rem;
   overflow: hidden;
@@ -236,7 +257,7 @@ h3 {
 .gallery-controls .swiper-button-prev::after,
 .gallery-controls .swiper-button-next::after {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .gallery-controls .swiper-pagination {
@@ -263,8 +284,8 @@ h3 {
 
 .site-footer {
   padding: 1.25rem 0;
-  border-top: 1px solid #b7c0b7;
-  color: #46564b;
+  border-top: 1px solid var(--colore-bordo);
+  color: var(--colore-secondario);
   font-size: 0.875rem;
 }
 
@@ -272,7 +293,7 @@ h3 {
   position: absolute;
   top: -6rem;
   left: 1rem;
-  z-index: 10;
+  z-index: 110;
   padding: 0.75rem 1rem;
   background: #ffffff;
   color: var(--colore-testo);
@@ -289,10 +310,33 @@ h3 {
   outline-offset: 3px;
 }
 
-/* Da 600 px: due colonne per gli appuntamenti. */
+/* Da 600 px: menu in riga e due colonne per gli appuntamenti. */
 @media (min-width: 600px) {
+  .site-header {
+    padding: 1rem 0;
+  }
+
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  nav {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0;
+  }
+
   .event-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  html {
+    scroll-padding-top: 6rem;
   }
 }
 
