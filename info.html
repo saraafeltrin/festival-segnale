@@ -6,7 +6,8 @@
   <title>Info e luoghi — Segnale</title>
 
   <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+        rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@14.4.0/swiper-bundle.min.css">
@@ -19,6 +20,7 @@
       <a class="brand" href="index.html">
         Segnale<span>Festival di design</span>
       </a>
+
       <nav aria-label="Navigazione principale">
         <a href="index.html">Home</a>
         <a href="programma.html">Programma</a>
@@ -30,7 +32,7 @@
   <main id="contenuto" class="container">
     <section class="intro">
       <p class="eyebrow">12–13 giugno · Torino · Festival immaginario</p>
-      <h1>Info e luoghi</h1>
+      <h1 id="titolo-info">Info e luoghi</h1>
       <p class="lead">Scopri le tre sedi del festival e come raggiungerle.</p>
       <p class="reading-text">
         Le sedi e gli eventi sono inventati per questa esercitazione.
@@ -46,9 +48,11 @@
            aria-label="Galleria fotografica delle sedi">
         <div class="swiper-wrapper">
           <figure class="swiper-slide">
-            <img src="assets/luoghi/sede-centrale.jpg"
-                 alt="Edificio della sede centrale del Politecnico di Torino in Corso Duca degli Abruzzi."
-                 width="1200" height="800">
+            <img
+              src="assets/luoghi/sede-centrale.jpg"
+              alt="Edificio della sede centrale del Politecnico di Torino in Corso Duca degli Abruzzi."
+              width="1200"
+              height="800">
             <figcaption>
               <strong>Sede centrale</strong>
               Corso Duca degli Abruzzi 24 — Officina Nord nel festival immaginario.
@@ -56,9 +60,11 @@
           </figure>
 
           <figure class="swiper-slide">
-            <img src="assets/luoghi/politecnico-valentino.jpg"
-                 alt="Cortile del Politecnico al Valentino, con edifici disposti intorno allo spazio centrale."
-                 width="1200" height="800">
+            <img
+              src="assets/luoghi/politecnico-valentino.jpg"
+              alt="Cortile del Politecnico al Valentino, con edifici disposti intorno allo spazio centrale."
+              width="1200"
+              height="800">
             <figcaption>
               <strong>Politecnico al Valentino</strong>
               Viale Mattioli 39 — Spazio Forma nel festival immaginario.
@@ -66,9 +72,11 @@
           </figure>
 
           <figure class="swiper-slide">
-            <img src="assets/luoghi/mirafiori.jpg"
-                 alt="Edificio del centro di design nella sede di Mirafiori."
-                 width="1200" height="800">
+            <img
+              src="assets/luoghi/mirafiori.jpg"
+              alt="Edificio del centro di design nella sede di Mirafiori."
+              width="1200"
+              height="800">
             <figcaption>
               <strong>Sede di Mirafiori</strong>
               Corso Luigi Settembrini 178 — Cortile Comune nel festival immaginario.
@@ -90,7 +98,8 @@
     <section class="content-section" aria-labelledby="titolo-mappa">
       <h2 id="titolo-mappa">Come arrivare</h2>
 
-      <iframe id="mappa-sedi"
+      <iframe
+        id="mappa-sedi"
         title="Mappa delle tre sedi di riferimento per il festival Segnale a Torino"
         src="https://umap.openstreetmap.fr/it/map/segnale-sedi-del-festival-immaginario_1479665?scaleControl=false&amp;miniMapControl=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;editMode=disabled&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=none&amp;captionBar=false&amp;captionMenus=true#12/45.0465/7.6528"
         loading="lazy">
@@ -105,17 +114,69 @@
       <ul class="venue-addresses">
         <li>
           <strong>Sede centrale</strong> — Corso Duca degli Abruzzi 24, Torino.
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Duca+degli+Abruzzi+24%2C+Torino">Indicazioni</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Duca+degli+Abruzzi+24%2C+Torino">
+            Indicazioni
+          </a>
         </li>
         <li>
           <strong>Politecnico al Valentino</strong> — Viale Mattioli 39, Torino.
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Mattioli+39%2C+Torino">Indicazioni</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Mattioli+39%2C+Torino">
+            Indicazioni
+          </a>
         </li>
         <li>
           <strong>Sede di Mirafiori</strong> — Corso Luigi Settembrini 178, Torino.
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Luigi+Settembrini+178%2C+Torino">Indicazioni</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Corso+Luigi+Settembrini+178%2C+Torino">
+            Indicazioni
+          </a>
         </li>
       </ul>
+
+      <p class="reading-text teaching-note">
+        Il festival e gli eventi sono immaginari. Le sedi reali sono utilizzate
+        come riferimento per l’esercitazione; il sito non annuncia un evento
+        del Politecnico.
+      </p>
+    </section>
+
+    <section class="content-section" aria-labelledby="titolo-meteo">
+      <div class="meteo-card">
+        <div class="meteo-card__decorazione" aria-hidden="true"></div>
+
+        <div class="meteo-card__contenuto">
+          <p class="eyebrow meteo-card__etichetta">
+            Condizioni attuali · Torino
+          </p>
+          <h2 id="titolo-meteo">Il meteo di oggi</h2>
+
+          <div class="meteo-card__dati" aria-live="polite">
+            <p id="meteo-messaggio">Caricamento dei dati meteo…</p>
+
+            <div id="meteo-dati" class="meteo-valori" hidden>
+              <p>
+                <span class="meteo-valori__etichetta">Temperatura</span>
+                <strong id="meteo-temperatura"></strong>
+              </p>
+              <p>
+                <span class="meteo-valori__etichetta">Vento</span>
+                <strong id="meteo-vento"></strong>
+              </p>
+              <p class="meteo-ora">
+                Dato aggiornato alle <span id="meteo-ora-valore"></span>
+              </p>
+            </div>
+          </div>
+
+          <p class="meteo-card__nota">
+            Condizioni attuali, non una previsione per le date del festival.
+          </p>
+          <p class="meteo-card__fonte">
+            Dati meteo:
+            <a href="https://open-meteo.com/">Open-Meteo</a>
+            · licenza CC BY 4.0.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -126,25 +187,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@14.4.0/swiper-bundle.min.js"></script>
-  <script>
-    new Swiper(".luoghi-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 16,
-      loop: false,
-      keyboard: { enabled: true, onlyInViewport: true },
-      a11y: {
-        prevSlideMessage: "Fotografia precedente",
-        nextSlideMessage: "Fotografia successiva"
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "fraction"
-      }
-    });
-  </script>
+  <script src="galleria.js"></script>
+  <script src="meteo.js"></script>
 </body>
 </html>

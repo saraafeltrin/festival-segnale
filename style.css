@@ -282,6 +282,10 @@ h3 {
   margin-bottom: 0.75rem;
 }
 
+.teaching-note {
+  margin-top: 2rem;
+}
+
 .site-footer {
   padding: 1.25rem 0;
   border-top: 1px solid var(--colore-bordo);
@@ -308,6 +312,116 @@ h3 {
 .site-header nav a:focus-visible {
   outline: 3px solid var(--colore-testo);
   outline-offset: 3px;
+}
+
+/* Card meteo ispirata alle onde della moodboard. */
+.meteo-card {
+  position: relative;
+  isolation: isolate;
+  max-width: 54rem;
+  overflow: hidden;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    var(--colore-sfondo) 72%
+  );
+  box-shadow: 0 0.5rem 1.5rem rgb(7 90 115 / 12%);
+}
+
+.meteo-card__decorazione {
+  position: absolute;
+  z-index: -1;
+  top: -4.5rem;
+  right: -3rem;
+  width: 15rem;
+  height: 15rem;
+  border: 1.5rem solid rgb(74 181 213 / 18%);
+  border-radius: 46% 54% 63% 37% / 43% 39% 61% 57%;
+  transform: rotate(-18deg);
+}
+
+.meteo-card__decorazione::after {
+  position: absolute;
+  top: 2.3rem;
+  left: -2rem;
+  width: 12rem;
+  height: 12rem;
+  border: 0.75rem solid rgb(7 90 115 / 12%);
+  border-radius: 58% 42% 37% 63% / 56% 58% 42% 44%;
+  content: "";
+}
+
+.meteo-card__contenuto {
+  position: relative;
+  max-width: 42rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.meteo-card__etichetta {
+  margin: 0;
+  color: var(--colore-primario-scuro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.meteo-card h2 {
+  margin: 0.35rem 0 1rem;
+}
+
+.meteo-card__dati {
+  min-height: 3rem;
+}
+
+.meteo-valori {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.meteo-valori > p:not(.meteo-ora) {
+  min-width: 8.5rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 78%);
+}
+
+.meteo-valori__etichetta {
+  display: block;
+  color: var(--colore-secondario);
+  font-size: 0.875rem;
+}
+
+.meteo-valori strong {
+  display: block;
+  color: var(--colore-primario-scuro);
+  font-size: 1.4rem;
+}
+
+.meteo-ora {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--colore-secondario);
+  font-size: 0.875rem;
+}
+
+.meteo-card__nota {
+  margin: 1.25rem 0 0.5rem;
+  color: var(--colore-testo);
+}
+
+.meteo-card__fonte {
+  margin: 0;
+  color: var(--colore-secondario);
+  font-size: 0.875rem;
+}
+
+.meteo-card__fonte a {
+  color: var(--colore-primario-scuro);
 }
 
 /* Da 600 px: menu in riga e due colonne per gli appuntamenti. */
@@ -359,5 +473,18 @@ h3 {
 
   .gallery-controls {
     gap: 0.75rem;
+  }
+
+  .meteo-card__decorazione {
+    top: -5rem;
+    right: -7rem;
+  }
+
+  .meteo-valori {
+    gap: 0.5rem;
+  }
+
+  .meteo-valori > p:not(.meteo-ora) {
+    flex: 1 1 7.5rem;
   }
 }
